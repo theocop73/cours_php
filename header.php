@@ -17,7 +17,7 @@
   <nav class="navbar navbar-light bg-light">
     
   <a class="navbar-brand" href="index.php?page=profil">Profil</a>
-  <a class="navbar-brand" href="index.php?paeg=contact">contact</a>
+  <a class="navbar-brand" href="index.php?page=contact">contact</a>
   <a class="navbar-brand" href="index.php?page=contenu">Contenu</a>
 </nav>
 </div>

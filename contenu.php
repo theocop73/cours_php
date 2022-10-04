@@ -1,5 +1,5 @@
 <?php $title = "contenu"; ?>
-<?php require 'header.php';
+<?php include 'header.php';
 ?>
 
 
@@ -26,5 +26,5 @@
 
 
     </main>
-<?php require 'footer.php';
+<?php include 'footer.php';
 ?>

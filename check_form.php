@@ -17,11 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $name = test_input($_POST["lastname"]);
     }
-    $pattern = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^";  
+    
     if (empty($_POST["email"])) {
       $emailErr = "Email is required";
     }
-    elseif(!preg_match($pattern, $_POST["email"])){
+    elseif(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
         $emailErr = "EMAIL NOT VALID";
     }
     else {

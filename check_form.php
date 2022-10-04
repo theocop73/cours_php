@@ -1,15 +1,7 @@
 <?php
 // define variables and set to empty values
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = test_input($_POST["lastname"]);
-  $firstname = test_input($_POST["firstname"]);
-  $email = test_input($_POST["email"]);
-  $phone = test_input($_POST["number"]);
-  $reason = test_input($_POST["MyRadio"]);
-  $message = test_input($_POST["message"]);
-  $civility = test_input($_POST["civility"]);
-}
+
 
 function test_input($data) {
   $data = trim($data);

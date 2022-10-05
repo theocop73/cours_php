@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $nameErr = "Name is required";
       $error_count ++;
     }
-    elseif(!preg_match("/^[a-zA-Z-' ]*$/", $_POST["lastname"])){
+    elseif(!preg_match("/^\pL+(?>[- ']\pL+)*$/u", $_POST["lastname"])){
         $nameErr = "Only letters and white space allowed";
         $error_count ++;
     }
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $firstnameErr = "firstname required";
       $error_count ++;
     }
-    elseif(!preg_match("/^[a-zA-Z-' ]*$/", $_POST["firstname"])){
+    elseif(!preg_match("/^\pL+(?>[- ']\pL+)*$/u", $_POST["firstname"])){
         $firstnameErr = "Only letters and white space allowed";
         $error_count ++;
     }

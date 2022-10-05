@@ -10,16 +10,23 @@ function test_input($data) {
   return $data;
 }
 
-
+$error_count;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["lastname"])) {
       $nameErr = "Name is required";
-    } else {
+      $error_count ++;
+    }
+    elseif(!preg_match("/^[a-zA-Z-' ]*$/", $_POST["lastname"])){
+        $nameErr = "Only letters and white space allowed";
+        $error_count ++;
+    }
+    else {
       $name = test_input($_POST["lastname"]);
     }
-    
+
     if (empty($_POST["email"])) {
       $emailErr = "Email is required";
+      $error_count ++;
     }
     elseif(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
         $emailErr = "EMAIL NOT VALID";
@@ -30,7 +37,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (empty($_POST["firstname"])) {
       $firstnameErr = "firstname required";
-    } else {
+      $error_count ++;
+    }
+    elseif(!preg_match("/^[a-zA-Z-' ]*$/", $_POST["firstname"])){
+        $firstnameErr = "Only letters and white space allowed";
+        $error_count ++;
+    }
+    else {
       $firstname = test_input($_POST["firstname"]);
     }
   
@@ -42,9 +55,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($_POST["message"])) {
         $messErr = "message is required";
+        $error_count ++;
       } 
       elseif(strlen($_POST["message"]) < 5){
         $messErr = "message has to be at least 5 characters long";
+        $error_count ++;
       }
       else {
         $mess = test_input($_POST["message"]);

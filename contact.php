@@ -10,7 +10,7 @@
 <?php 
 include 'session_data.php';
 
-var_dump($_SESSION)
+var_dump($_SESSION);
 ?> 
 
 <form class="infos" post="index.php"  method="post">
@@ -62,30 +62,30 @@ var_dump($_SESSION)
     <p>Raison du contact:</p>
     <div class="form-check">
 
-<input type="radio" name="MyRadio" value="emploi"
-  <?php if(fieldvalue("MyRadio") == "emploi") {
-     echo "checked";
-  }else{
-    echo "";
-  }
+    <input type="radio" name="MyRadio" value="emploi"
+    <?php if(fieldvalue("MyRadio") == "emploi") {
+        echo "checked";
+    }else{
+        echo "";
+    }
 
-?>>Pour un emploi<br> 
-    <input type="radio" name="MyRadio" value="projet"  <?php if(fieldvalue("MyRadio") == "projet") {
-     echo "checked";
-  }else{
-    echo "";
-  }
+    ?>>Pour un emploi<br> 
+        <input type="radio" name="MyRadio" value="projet"  <?php if(fieldvalue("MyRadio") == "projet") {
+        echo "checked";
+    }else{
+        echo "";
+    }
 
-?>>Pour un projet
-  
-</div>
+    ?>>Pour un projet
+    
+    </div>
 
 
-<div class="form-group col-sm-6">
-<span class="error"><?php echo "*".$messErr;?></span>
-  <label for="exampleFormControlTextarea2">Votre message :</label>
-  <textarea class="form-control rounded-0" name="message" id="exampleFormControlTextarea2" rows="3" ><?php echo fieldvalue('message') ?></textarea>
-</div>
+    <div class="form-group col-sm-6">
+    <span class="error"><?php echo "*".$messErr;?></span>
+    <label for="exampleFormControlTextarea2">Votre message :</label>
+    <textarea class="form-control rounded-0" name="message" id="exampleFormControlTextarea2" rows="3" ><?php echo fieldvalue('message') ?></textarea>
+    </div>
 
 
 
@@ -97,6 +97,9 @@ var_dump($_SESSION)
     <!-- Submit button -->
     <button type="submit" name="submit" class="btn btn-primary btn-block mb-4">MAMA</button>
 
+</form>
+    <?php include 'upload_file.php';
+     ?>
 
     <?php
 

@@ -10,10 +10,14 @@
 <?php 
 include 'session_data.php';
 
+
 var_dump($_SESSION);
 ?> 
 
-<form class="infos" post="index.php"  method="post">
+
+
+
+<form class="infos" post=""  method="post" enctype="multipart/form-data">
 
     <div class="row">
         <div class="col-sm-4">
@@ -89,7 +93,9 @@ var_dump($_SESSION);
 
 
 
-
+    Select file to upload:
+  <input type="file" name="fileToUpload" id="fileToUpload" />
+ 
 
 
     
@@ -98,8 +104,8 @@ var_dump($_SESSION);
     <button type="submit" name="submit" class="btn btn-primary btn-block mb-4">MAMA</button>
 
 </form>
-    <?php include 'upload_file.php';
-     ?>
+   
+<?php include 'upload_file.php'; ?>
 
     <?php
 
